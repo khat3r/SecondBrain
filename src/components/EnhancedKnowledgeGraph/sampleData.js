@@ -1,0 +1,502 @@
+// sampleData.js
+
+export function generateSampleData() {
+    // The entire "generate rich sample data" logic from your original code:
+  
+    // Major knowledge domains as parent nodes
+    const domains = [
+      {
+        id: "comp-sci",
+        name: "Computer Science",
+        isParent: true,
+        type: "parent",
+        spaceId: "space-1",
+        children: ["algorithms", "data-structures", "databases", "programming", "ai-ml"],
+        connections: [],
+        timeActive: 350,
+        notes: "Core computer science concepts and topics",
+        tags: ["STEM", "technology"],
+        createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date().toISOString(),
+      },
+      {
+        id: "mathematics",
+        name: "Mathematics",
+        isParent: true,
+        type: "parent",
+        spaceId: "space-1",
+        children: ["calculus", "linear-algebra", "discrete-math", "statistics", "geometry"],
+        connections: ["comp-sci"],
+        timeActive: 280,
+        notes: "Mathematical foundations and theories",
+        tags: ["STEM", "fundamental"],
+        createdAt: new Date(Date.now() - 100 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date().toISOString(),
+      },
+      {
+        id: "physics",
+        name: "Physics",
+        isParent: true,
+        type: "parent",
+        spaceId: "space-1",
+        children: ["mechanics", "electromagnetism", "thermodynamics", "quantum", "relativity"],
+        connections: ["mathematics"],
+        timeActive: 210,
+        notes: "Study of matter, energy and the universe",
+        tags: ["STEM", "science"],
+        createdAt: new Date(Date.now() - 95 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date().toISOString(),
+      },
+      {
+        id: "philosophy",
+        name: "Philosophy",
+        isParent: true,
+        type: "parent",
+        spaceId: "space-3",
+        children: ["epistemology", "ethics", "metaphysics", "logic", "aesthetics"],
+        connections: ["mathematics"],
+        timeActive: 180,
+        notes: "Exploration of fundamental questions about existence, knowledge, values, reason, and more",
+        tags: ["humanities", "fundamental"],
+        createdAt: new Date(Date.now() - 85 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date().toISOString(),
+      },
+      {
+        id: "projects",
+        name: "Active Projects",
+        isParent: true,
+        type: "parent",
+        spaceId: "space-2",
+        children: ["knowledge-graph", "ml-research", "web-app", "book"],
+        connections: [],
+        timeActive: 400,
+        notes: "Current active projects and initiatives",
+        tags: ["projects", "active"],
+        createdAt: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date().toISOString(),
+      },
+    ];
+  
+    // Child nodes for Computer Science
+    const csSubs = [
+      {
+        id: "algorithms",
+        name: "Algorithms",
+        parentId: "comp-sci",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["data-structures", "discrete-math"],
+        timeActive: 120,
+        notes: "Study of algorithmic problem solving and computational complexity",
+        tags: ["programming", "fundamentals"],
+        createdAt: new Date(Date.now() - 88 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "data-structures",
+        name: "Data Structures",
+        parentId: "comp-sci",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["algorithms"],
+        timeActive: 90,
+        notes: "Organization and storage of data for efficient access and modification",
+        tags: ["programming", "fundamentals"],
+        createdAt: new Date(Date.now() - 87 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "databases",
+        name: "Databases",
+        parentId: "comp-sci",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["data-structures"],
+        timeActive: 70,
+        notes: "Study of database design, management and querying",
+        tags: ["data", "backend"],
+        createdAt: new Date(Date.now() - 85 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "programming",
+        name: "Programming",
+        parentId: "comp-sci",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["algorithms", "data-structures"],
+        timeActive: 200,
+        notes: "Writing code to implement algorithms and solve problems",
+        tags: ["coding", "fundamentals"],
+        createdAt: new Date(Date.now() - 86 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "ai-ml",
+        name: "AI & Machine Learning",
+        parentId: "comp-sci",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["statistics", "linear-algebra"],
+        timeActive: 150,
+        notes: "Study of artificial intelligence and machine learning systems",
+        tags: ["AI", "data science"],
+        createdAt: new Date(Date.now() - 80 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Child nodes for Mathematics
+    const mathSubs = [
+      {
+        id: "calculus",
+        name: "Calculus",
+        parentId: "mathematics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["physics-mechanics", "analysis"],
+        timeActive: 85,
+        notes: "Study of continuous change and its applications",
+        tags: ["math", "calculus"],
+        createdAt: new Date(Date.now() - 98 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "linear-algebra",
+        name: "Linear Algebra",
+        parentId: "mathematics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["ai-ml", "calculus"],
+        timeActive: 75,
+        notes: "Study of linear equations, vector spaces, and matrices",
+        tags: ["math", "algebra"],
+        createdAt: new Date(Date.now() - 95 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "discrete-math",
+        name: "Discrete Mathematics",
+        parentId: "mathematics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["algorithms", "logic"],
+        timeActive: 60,
+        notes: "Study of mathematical structures that are discrete rather than continuous",
+        tags: ["math", "discrete"],
+        createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "statistics",
+        name: "Statistics",
+        parentId: "mathematics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["ai-ml", "data-science"],
+        timeActive: 90,
+        notes: "Collection, analysis, interpretation and presentation of data",
+        tags: ["math", "data"],
+        createdAt: new Date(Date.now() - 85 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "geometry",
+        name: "Geometry",
+        parentId: "mathematics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["calculus", "linear-algebra"],
+        timeActive: 50,
+        notes: "Study of shapes, sizes, relative positions of figures, and properties of space",
+        tags: ["math", "shapes"],
+        createdAt: new Date(Date.now() - 80 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Child nodes for Physics
+    const physicsSubs = [
+      {
+        id: "mechanics",
+        name: "Mechanics",
+        parentId: "physics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["calculus"],
+        timeActive: 65,
+        notes: "Study of motion and forces acting on objects",
+        tags: ["physics", "motion"],
+        createdAt: new Date(Date.now() - 92 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "electromagnetism",
+        name: "Electromagnetism",
+        parentId: "physics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["calculus", "vector-calculus"],
+        timeActive: 55,
+        notes: "Study of electromagnetic forces and fields",
+        tags: ["physics", "electricity"],
+        createdAt: new Date(Date.now() - 88 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 9 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "thermodynamics",
+        name: "Thermodynamics",
+        parentId: "physics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["calculus", "statistical-mechanics"],
+        timeActive: 45,
+        notes: "Study of heat, temperature, energy, and their relationships",
+        tags: ["physics", "energy"],
+        createdAt: new Date(Date.now() - 85 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "quantum",
+        name: "Quantum Physics",
+        parentId: "physics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["linear-algebra"],
+        timeActive: 70,
+        notes: "Study of matter and energy at the smallest scales",
+        tags: ["physics", "quantum"],
+        createdAt: new Date(Date.now() - 75 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 11 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "relativity",
+        name: "Relativity",
+        parentId: "physics",
+        type: "concept",
+        spaceId: "space-1",
+        connections: ["calculus", "tensor-analysis"],
+        timeActive: 40,
+        notes: "Einstein's theories of special and general relativity",
+        tags: ["physics", "space-time"],
+        createdAt: new Date(Date.now() - 70 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 18 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Child nodes for Philosophy
+    const philosophySubs = [
+      {
+        id: "epistemology",
+        name: "Epistemology",
+        parentId: "philosophy",
+        type: "concept",
+        spaceId: "space-3",
+        connections: ["logic", "metaphysics"],
+        timeActive: 50,
+        notes: "Study of knowledge and how we know what we know",
+        tags: ["philosophy", "knowledge"],
+        createdAt: new Date(Date.now() - 83 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 13 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "ethics",
+        name: "Ethics",
+        parentId: "philosophy",
+        type: "concept",
+        spaceId: "space-3",
+        connections: ["metaphysics"],
+        timeActive: 45,
+        notes: "Study of right and wrong, good and bad",
+        tags: ["philosophy", "morality"],
+        createdAt: new Date(Date.now() - 80 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 16 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "metaphysics",
+        name: "Metaphysics",
+        parentId: "philosophy",
+        type: "concept",
+        spaceId: "space-3",
+        connections: ["epistemology", "quantum"],
+        timeActive: 40,
+        notes: "Study of the nature of reality and existence",
+        tags: ["philosophy", "reality"],
+        createdAt: new Date(Date.now() - 78 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 19 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "logic",
+        name: "Logic",
+        parentId: "philosophy",
+        type: "concept",
+        spaceId: "space-3",
+        connections: ["discrete-math", "epistemology"],
+        timeActive: 35,
+        notes: "Study of valid reasoning and inference",
+        tags: ["philosophy", "reasoning"],
+        createdAt: new Date(Date.now() - 75 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 21 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "aesthetics",
+        name: "Aesthetics",
+        parentId: "philosophy",
+        type: "concept",
+        spaceId: "space-3",
+        connections: ["ethics"],
+        timeActive: 30,
+        notes: "Study of beauty, art, and taste",
+        tags: ["philosophy", "art"],
+        createdAt: new Date(Date.now() - 70 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Projects
+    const projects = [
+      {
+        id: "knowledge-graph",
+        name: "Knowledge Graph Tool",
+        parentId: "projects",
+        type: "project",
+        spaceId: "space-2",
+        connections: ["ai-ml", "data-structures", "databases"],
+        timeActive: 180,
+        notes: "Building a personal knowledge management system with graph visualization",
+        tags: ["software", "tool", "active"],
+        createdAt: new Date(Date.now() - 58 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "ml-research",
+        name: "ML Research Project",
+        parentId: "projects",
+        type: "project",
+        spaceId: "space-2",
+        connections: ["ai-ml", "statistics"],
+        timeActive: 120,
+        notes: "Research on novel machine learning techniques for knowledge graphs",
+        tags: ["research", "AI", "active"],
+        createdAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "web-app",
+        name: "Web Application",
+        parentId: "projects",
+        type: "project",
+        spaceId: "space-2",
+        connections: ["programming", "databases"],
+        timeActive: 150,
+        notes: "Building a web application for collaborative knowledge sharing",
+        tags: ["software", "web", "active"],
+        createdAt: new Date(Date.now() - 40 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "book",
+        name: "Book Project",
+        parentId: "projects",
+        type: "project",
+        spaceId: "space-2",
+        connections: ["epistemology"],
+        timeActive: 100,
+        notes: "Writing a book on personal knowledge management and learning strategies",
+        tags: ["writing", "education", "active"],
+        createdAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Resources
+    const resources = [
+      {
+        id: "resource-1",
+        name: "Graph Theory Textbook",
+        type: "resource",
+        spaceId: "space-1",
+        connections: ["discrete-math", "data-structures"],
+        timeActive: 35,
+        notes: "Comprehensive textbook on graph theory and its applications",
+        tags: ["book", "resource", "math"],
+        createdAt: new Date(Date.now() - 65 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "resource-2",
+        name: "AI Course Materials",
+        type: "resource",
+        spaceId: "space-1",
+        connections: ["ai-ml"],
+        timeActive: 40,
+        notes: "Course materials from advanced AI and machine learning classes",
+        tags: ["course", "resource", "AI"],
+        createdAt: new Date(Date.now() - 55 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+      {
+        id: "resource-3",
+        name: "Philosophy Essays",
+        type: "resource",
+        spaceId: "space-3",
+        connections: ["epistemology", "ethics"],
+        timeActive: 25,
+        notes: "Collection of essays on various philosophical topics",
+        tags: ["essays", "resource", "philosophy"],
+        createdAt: new Date(Date.now() - 50 * 24 * 60 * 60 * 1000).toISOString(),
+        lastModified: new Date(Date.now() - 22 * 24 * 60 * 60 * 1000).toISOString(),
+      },
+    ];
+  
+    // Combine
+    const allNodes = [
+      ...domains,
+      ...csSubs,
+      ...mathSubs,
+      ...physicsSubs,
+      ...philosophySubs,
+      ...projects,
+      ...resources,
+    ];
+  
+    // Timeline events
+    const timelineEvents = [];
+  
+    // Creation events
+    allNodes.forEach((node) => {
+      timelineEvents.push({
+        timestamp: node.createdAt,
+        nodeId: node.id,
+        action: "created",
+        parentId: node.parentId,
+      });
+    });
+  
+    // Random study sessions
+    for (let i = 0; i < 50; i++) {
+      const randomNode = allNodes[Math.floor(Math.random() * allNodes.length)];
+      const randomDate = new Date(
+        Date.now() - Math.floor(Math.random() * 60) * 24 * 60 * 60 * 1000
+      );
+      const randomDuration = Math.floor(Math.random() * 60) + 15; // 15-75 minutes
+  
+      timelineEvents.push({
+        timestamp: randomDate.toISOString(),
+        nodeId: randomNode.id,
+        action: "studied",
+        duration: randomDuration,
+      });
+    }
+  
+    // Sort
+    timelineEvents.sort(
+      (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    );
+  
+    return {
+      nodes: allNodes,
+      timeline: timelineEvents,
+    };
+  }
+  
