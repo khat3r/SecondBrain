@@ -1,5 +1,3 @@
-# SecondBrain
-
 # 🧠 Second Brain – Enhanced Knowledge Graph
 
 A visual, interactive second brain app to manage and explore knowledge using graphs. Built with **React**, **D3.js**, and **TailwindCSS**.
