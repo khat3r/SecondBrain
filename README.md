@@ -29,10 +29,10 @@ Make sure you have **Node.js** and **npm** installed.
 2. Install dependencies:
 
 bash
-Copy
+
 npm install
 Run the development server:
 
 bash
-Copy
+
 npm start
